@@ -1,7 +1,7 @@
  
 
 // EDIT THIS ///////////////////////////////////////////////
-var testNetOn = 0; // will run on test net server if 1
+var testNetOn = 1; // will run on test net server if 1
 
 var waitForConfirmation = 0; // will decrease user experience 
 
@@ -47,8 +47,15 @@ if (testNetOn == 1) {
     nemPaymentAddress = "TDAUP37F5VSUEUZ7FZEVS6B3B3PPIIH76CY6C4XP";
 }
 
-$('#payAmount').html(paymentAmount/1000000 + ' XEM' );
-$('#payAddress').html(nemPaymentAddress);
+
+if (testNetOn == 1) {
+    $('#payAmount').html(paymentAmount/1000000 + ' XEM' );
+    $('#payAddress').html(nemPaymentAddress);
+}else {
+    $('#payAmount').html(paymentAmount/1000000 + ' XEM (testnet)' );
+    $('#payAddress').html(nemPaymentAddress);
+}
+
 
 var qrcodePayAdress = new QRCode(document.getElementById("qrPayAddress"), {
 	width : 200,
