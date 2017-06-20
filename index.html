@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>NEM paper wallet </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="PayContentCss.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+
+
+
+		<div class="overlayPC"> 
+			<img class="nemlogo" height="30px" length="30px" src="images/nemlogo.png" alt="" />
+			<div class="nemlogoTxt">NEM PayContent.js</div>
+			<div id="about">
+				
+				<div class="contentBox">
+					You are viewing a NEM PayContent site.<br> 
+					To access the content please make a small onetime payment of 
+					<div id="payAmount"></div> 
+					to the following address: 
+					
+					<div id="qrPayAddress"> </div>
+					<div id="payAddress"></div>
+					
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+
+	</body>
+
+
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="qrcode.js"></script>
+	<script src="nem-sdk.js"></script>
+
+	<script src="PayContent.js"></script>
+	
+</html>
