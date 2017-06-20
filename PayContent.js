@@ -49,10 +49,10 @@ if (testNetOn == 1) {
 
 
 if (testNetOn == 1) {
-    $('#payAmount').html(paymentAmount/1000000 + ' XEM' );
+    $('#payAmount').html(paymentAmount/1000000 + ' XEM (testnet)' );
     $('#payAddress').html(nemPaymentAddress);
 }else {
-    $('#payAmount').html(paymentAmount/1000000 + ' XEM (testnet)' );
+    $('#payAmount').html(paymentAmount/1000000 + ' XEM' );
     $('#payAddress').html(nemPaymentAddress);
 }
 
