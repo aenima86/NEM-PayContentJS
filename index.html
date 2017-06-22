@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>NEM payContent.jp test </title>
+		<title>NEM payContent.jp test</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
@@ -24,11 +24,14 @@
 				<div class="contentBox">
 					You are viewing a NEM PayContent site.<br> 
 					To access the content please make a small onetime payment of 
-					<div id="payAmount"></div> 
+					<div id="payAmount"></div>
+					
 					to the following address: 
 					
 					<div id="qrPayAddress"> </div>
-					<div id="payAddress"></div>
+					<div id="payAddress"></div><br>
+					NB: dot (e.g. 0.2) is not working as decimal separator in the NanoWallet (june 2017)<br>
+					instead use "," (e.g. 0,2) to send the correct amount.
 					
 				</div>
 
