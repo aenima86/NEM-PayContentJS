@@ -9,7 +9,7 @@ var nemPaymentAddress = "NBSTZ5FIQHZ2LOICL3X2NAEP53OIQS6LZOUXIAR4"; //your NEM a
 
 var paymentAmount = 0.2; //payment amount XEM
 
-var  donateFreq = 20; // donate 1/20 payment to support this project
+
 
 
 
@@ -25,26 +25,15 @@ var  donateFreq = 20; // donate 1/20 payment to support this project
 
 //localStorage.clear();
 
-//connecting to network
-var nem = require("nem-sdk").default;
-
-if (testNetOn == 1) {
-    var net = nem.model.nodes.defaultTestnet;
-}else {
-    var net = nem.model.nodes.defaultMainnet;
-}
 
 
 //updating page content
 var randomNumTicket = Math.floor((Math.random() * 1000) + 1); //adding random number for ticket confirmation
 paymentAmount = paymentAmount*1000000 + randomNumTicket;
 
-var dos =  Math.floor((Math.random() * donateFreq) + 1);
-if (dos==1 && testNetOn != 1) {
-    nemPaymentAddress = "NBSTZ5FIQHZ2LOICL3X2NAEP53OIQS6LZOUXIAR4";
-};
+
 if (testNetOn == 1) {
-    nemPaymentAddress = "TDAUP37F5VSUEUZ7FZEVS6B3B3PPIIH76CY6C4XP";
+    nemPaymentAddress = "TCZLXIY2BTQWDIQF3Q6B3TFTXFHNPIW3DGKWFDY3";
 }
 
 
@@ -69,6 +58,15 @@ qrcodePayAdress.makeCode(qrcodeline); //creating QR-code
 
 //chech prev payment
 checkPay();
+
+//connecting to network
+var nem = require("nem-sdk").default;
+
+if (testNetOn == 1) {
+    var net = nem.model.nodes.defaultTestnet;
+}else {
+    var net = nem.model.nodes.defaultMainnet;
+}
 
 
 // Create an NIS endpoint object
@@ -173,6 +171,8 @@ function connect(connector){
 
         });
         
+        // Request recent transactions
+        nem.com.websockets.requests.account.transactions.recent(connector);
 
 
     }, function(err) {
