@@ -6847,7 +6847,7 @@ module.exports = {
  *
  * @type {string}
  */
-var defaultTestnet = 'http://104.128.226.60';//'http://bob.nem.ninja';
+var defaultTestnet = 'http://23.228.67.85';//'http://bob.nem.ninja';
 
 /**
  * The default mainnet node
